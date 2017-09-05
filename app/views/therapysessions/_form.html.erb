@@ -1,0 +1,76 @@
+<%= params %>
+<br>
+<%= therapysession.inspect %>
+<br>
+<%= therapysession.client.inspect %>
+<br>
+<%= therapysession.therapist.inspect %>
+<br>
+<%= form_for(therapysession) do |f| %>
+  <% if therapysession.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(therapysession.errors.count, "error") %> prohibited this therapysession from being saved:</h2>
+
+      <ul>
+      <% therapysession.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- TODO hide therapist field if user is not admin -->
+  <div class="field">
+    <%= f.label :therapist_id %>
+    <%= f.collection_select(:therapist_id, Therapist.all, :id, :therapist_name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :client_id %>
+    <%= f.collection_select(:client_id, Client.all, :id, :client_name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :session_started_at %>
+    <%= f.datetime_local_field :session_started_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :session_duration_minutes %>
+    <%= f.number_field :session_duration_minutes, in: 10..90, step: 10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <% if therapysession.new_record? %>
+      <%= f.text_field :location, value: therapysession.default_location_on_new %>
+    <% else %>
+      <%= f.text_field :location %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fee_pence %>
+    <% if therapysession.new_record? %>
+      <%= f.text_field :fee_pence, value: therapysession.default_fee_pence_on_new %>
+      <span>(<%= therapysession.default_fee_type %>)</span>
+    <% else %>
+      <%= f.text_field :fee_pence %>
+    <% end %>    
+  </div>
+
+  <div class="field">
+    <%= f.label :new_client_assessment %>
+    <%= f.check_box :new_client_assessment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :attendance %>
+    <%= f.check_box :attendance %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @address_book.name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @address_book.dob %>
+</p>
+
+<p>
+  <strong>Address line1:</strong>
+  <%= @address_book.address_line1 %>
+</p>
+
+<p>
+  <strong>Address line2:</strong>
+  <%= @address_book.address_line2 %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @address_book.postcode %>
+</p>
+
+<%= link_to 'Edit', edit_address_book_path(@address_book) %> |
+<%= link_to 'Back', address_books_path %>

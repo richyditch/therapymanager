@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @therapysession.client.client_name %>
+</p>
+
+<p>
+  <strong>Date and time of session:</strong>
+  <%= @therapysession.session_started_at %>
+</p>
+
+<p>
+  <strong>duration:</strong>
+  <%= @therapysession.session_duration_minutes %> minutes
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @therapysession.location %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @therapysession.fee_in_pounds %>
+</p>
+
+
+<%= link_to 'Edit', edit_therapysession_path(@therapysession) %> |
+<%= link_to 'Back', therapysessions_path %> |
+<%= link_to 'Session history', therapysessions_path %> 

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Therapysessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Therapist</th>
+      <th>Date</th>
+      <th>Client</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @therapysessions.each do |therapysession| %>
+      <tr>
+        <td><%= therapysession.therapist.therapist_name %></td>
+        <td><%= therapysession.session_started_at %> at <%=therapysession.location %></td>
+        <td><%= therapysession.client.client_name %></td>
+        <td><%= link_to 'Show', therapysession %></td>
+        <td><%= link_to 'Edit', edit_therapysession_path(therapysession) %></td>
+        <td><%= link_to 'Destroy', therapysession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Therapysession', new_therapysession_path %>

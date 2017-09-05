@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  client: mad_mike
+  date_raised: <% Time.now %>
+  description: 'this is invoice 1 for mad mike'
+  total_pence: 10000
+# column: value
+#
+
+two:
+  client: mad_mike  
+  date_raised: <% Time.now %>
+  description: 'this is invoice 2 for mad mike'
+  total_pence: 20000
+
+three:
+  client: paranoid_pete  
+  date_raised: <% Time.now %>
+  description: 'this is invoice 1 for paranoid pete'
+  total_pence: 20000
+# column: value
+
+    # t.datetime "date_raised"
+    # t.string   "description"
+    # t.integer  "total_pence"
+    # t.datetime "created_at",  null: false
+    # t.datetime "updated_at",  null: false

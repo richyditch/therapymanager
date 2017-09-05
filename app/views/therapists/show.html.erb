@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Therapist name:</strong>
+  <%= @therapist.therapist_name %>
+</p>
+
+<p>
+  <strong>Default Location:</strong>
+  <%= @therapist.default_location %>
+</p>
+
+<p>
+  <strong>Default rate:</strong>
+  <%= @therapist.default_rate_in_pounds %> minutes
+</p>
+
+
+<%= link_to 'Edit', edit_therapist_path(@therapist) %> |
+<%= link_to 'Back', therapists_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Therapists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Therapist</th>
+      <th>Default Location</th>
+      <th>Default Rate</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @therapists.each do |therapist| %>
+      <tr>
+        <td><%= therapist.therapist_name %></td>
+        <td><%= therapist.default_location %></td>
+        <td><%= therapist.default_rate_in_pounds %></td>
+
+        <td><%= link_to 'Show', therapist %></td>
+        <td><%= link_to 'Edit', edit_therapist_path(therapist) %></td>
+        <td><%= link_to 'Destroy', therapist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Therapist', new_therapist_path %>

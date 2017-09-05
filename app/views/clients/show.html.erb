@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @client.client_name %>
+</p>
+
+<p>
+  <strong>Default rate:</strong>
+  <%= @client.default_rate_in_pounds %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

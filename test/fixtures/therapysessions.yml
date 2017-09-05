@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+ts1: 
+    client: mad_mike
+    invoice: one
+    therapist: sherene
+    session_started_at: <% Time.now %>
+    location: '152 Buckingham Palace rd'
+    fee_pence: 7500
+     
+ts2: 
+    client: mad_mike
+    therapist: sherene
+    session_started_at: <% Time.now %>
+    location: '152 Buckingham Palace rd'
+    fee_pence: 7500
+
+ts3: 
+    client: paranoid_pete
+    therapist: sherene
+    session_started_at: <% Time.now %>
+    location: '17 fontaine road'
+    fee_pence: 6000
+    new_client_assessment: true
+
+ts4: 
+    client: paranoid_pete
+    therapist: meg
+    session_started_at: <% Time.now %>
+    location: '17 fontaine road'
+    fee_pence: 6000
+    new_client_assessment: true
+

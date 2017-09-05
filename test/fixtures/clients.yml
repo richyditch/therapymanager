@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+mad_mike:
+  client_name: 'mad mike'
+  default_rate_pence: 6660
+
+paranoid_pete:
+  client_name: 'paranoid_pete'
+  default_rate_pence: 4000
+
+suicide_sam:
+  client_name: 'suicide sam'
