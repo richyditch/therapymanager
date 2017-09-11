@@ -1,4 +1,4 @@
-class TherapysessionsController < ApplicationController
+  class TherapysessionsController < ApplicationController
   before_action :set_therapysession, only: [:show, :edit, :update, :destroy]
 
   # GET /therapysessions

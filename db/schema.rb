@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904232823) do
+ActiveRecord::Schema.define(version: 20170906010716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170904232823) do
     t.text     "location"
     t.integer  "fee_pence"
     t.boolean  "new_client_assessment",    default: false
-    t.boolean  "attendance",               default: true
+    t.boolean  "did_not_attend",           default: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.index ["client_id"], name: "index_therapysessions_on_client_id", using: :btree
@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 20170904232823) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "associated_therapist_id"
+    t.boolean  "is_admin"
   end
 
 end

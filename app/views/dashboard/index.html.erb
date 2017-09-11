@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dashboard</h1>
+
+Welcome XXXXX
+
+<%= form_for :dashboard, url: "dashboard/select" do |f| %>
+    
+  <div class="field">
+    <%= f.label :client_id %>
+    <%= f.collection_select(:client_id, Client.all, :id, :client_name) %>
+  </div>
+
+
+  Last seen:  XXX
+  <br>
+  <%= link_to 'Log Session', new_therapist_client_therapysession_path(:therapist_id => "1", :client_id => "1") %>
+
+
+  <%= link_to 'Invoices', new_client_path %>
+
+  <%= link_to 'Clients', clients_path %>
+
+<% end %>

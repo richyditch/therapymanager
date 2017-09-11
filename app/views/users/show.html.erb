@@ -5,5 +5,15 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Is Admin:</strong>
+  <%= @user.is_admin %>
+</p>
+
+<% if @user.associated_therapist_id %>
+This user is linked to therapist record <strong><%= Therapist.find_by_id(@user.associated_therapist_id).therapist_name %></strong>
+<% end %>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

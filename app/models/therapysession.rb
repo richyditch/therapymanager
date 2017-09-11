@@ -16,7 +16,7 @@ class Therapysession < ApplicationRecord
     # t.text     "location"
     # t.integer  "fee_pence"
     # t.boolean  "new_client_assessment",    default: false
-    # t.boolean  "attendance",               default: true
+    # t.boolean  "did_not_attend",           default: true
     # t.datetime "created_at",                               null: false
     # t.datetime "updated_at",
 

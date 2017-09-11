@@ -26,6 +26,16 @@
     <%= f.password_field :password_confirmation, size: 40 %>
   </div>
 
+  <div class="field">
+    <%= f.label :associated_therapist_id %>
+    <%= f.collection_select :associated_therapist_id, Therapist.all, :id, :therapist_name %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :is_admin %>
+    <%= f.check_box :is_admin %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

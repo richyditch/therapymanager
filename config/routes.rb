@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 
   	resources :users
-	root "therapysessions#index"
+  	
+	root "dashboard#index"
 	
 	# root to 'index.html'
 
